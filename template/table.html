@@ -1,0 +1,13 @@
+<table class="table table-bordered table-striped">
+    <thead>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>JOB</th>
+    </thead>
+    <tr ng-repeat="item in persons">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.job}}</td>
+    </tr>
+</table>
+<div ng-transclude></div>

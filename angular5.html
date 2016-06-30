@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>指令与控制器交互</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+</head>
+<body style="padding:10px; overflow-x:hidden">
+    <h1>Angular directive 自定义指令</h1>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="panel-title">自定义 my-table 指令 与不同控制器之间的交互</div>
+        </div>
+        <div class="panel-body">
+            <div style="padding:20px" ng-controller="myController">
+                <button class="btn btn-danger" ng-click="clear();">清空重置</button>
+                <my-table method='getPersonData()'></my-table>
+                <hr>
+                <table ng-if='persons.length' class="table table-bordered table-striped">
+                    <thead>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>JOB</th>
+                    </thead>
+                    <tr ng-repeat="item in persons">
+                        <td>{{item.id}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.job}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div ng-controller="myController2">
+        <button class="btn btn-danger" ng-click="clear()">清空</button>
+        <my-table method="getProData()"></my-table>
+        <hr>
+        <table ng-if='products.length' class="table table-bordered table-striped">
+            <thead>
+                <th>产品编号</th>
+                <th>产品名称</th>
+                <th>产品数量</th>
+            </thead>
+            <tr ng-repeat="item in products">
+                <td>{{item.code}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.count}}</td>
+            </tr>
+        </table>
+    </div>
+    <div ng-controller="myController3">
+        <h4>compile 与 link</h4>
+        <ul>
+            <li  ng-repeat="i in arr">
+                <p>item{{i}} : hello angular!</p>
+                <ul my-repeat="2">
+                    <li id="list1">child item</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+<script src='lib/require.2.0.6.min.js' data-main="src/angular5.js"></script>
+</html>

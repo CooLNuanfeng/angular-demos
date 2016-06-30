@@ -1,0 +1,74 @@
+body{
+    overflow-x: hidden;
+}
+button,input{
+    outline: none;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    background: red;
+}
+
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}
+.blue{
+    color: blue;
+}
+.black{
+    color: black;
+}
+.font20{
+    font-size: 20px;
+    transition: all 10s ease;
+}
+
+.toWidth{
+    animation: changeWidth 10s ease-in-out forwards;
+}
+.toHeight{
+    animation: changeHeight 10s ease forwards;
+}
+.toReset{
+    animation: changReset  10s ease-in forwards;
+}
+
+.ng-animate{
+    color: #fff;
+}
+.toWidth-add,.toHeight-add{
+    background: green;
+}
+
+
+
+
+
+@keyframes changeWidth{
+    from {
+        width: 200px;
+    }
+    to {
+        width: 400px;
+    }
+}
+
+@keyframes changeHeight{
+    from{
+        height: 200px;
+    }
+    to {
+        height: 400px;
+    }
+}
+
+@keyframes changReset{
+    to {
+        width: 200px;
+        height: 200px;
+    }
+}

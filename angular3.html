@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/demo.css">
+</head>
+<body style="padding:10px;">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="panel-title">双向数据绑定</div>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" ng-controller="formController">
+                <div class="form-group">
+                  <label for="" class="control-label col-sm-2">邮 箱：</label>
+                  <div class="col-sm-10">
+                      <input type="text" class="form-control" id="" placeholder="请输入邮箱账号" value={{formInfo.email}}>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="" class="control-label col-sm-2">密 码：</label>
+                  <div class="col-sm-10">
+                      <input type="password" class="form-control" id="" placeholder="请输入密码" value={{formInfo.password}}>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-10 col-sm-offset-2">
+                        <label><input type="checkbox" ng-model='formInfo.remember'> 记住我</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-10 col-sm-offset-2">
+                        <button class="btn btn-primary" ng-click="getInfo()">获取</button>
+                        <button class="btn btn-info" ng-click="setInfo()">设置</button>
+                        <button class="btn btn-warning" ng-click="resetInfo()">重置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="panel panel-primary" ng-controller="myController">
+        <div class="panel-heading">
+            <div class="panel-title">ng-class ngAnimate</div>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-2">
+                    <div ng-class='color'>Hello angular</div>
+                    <div ng-class='{font20:isFont,green:isGreen}'>Hello angular</div>
+                </div>
+                <div class="col-md-10">
+                    <button class="btn btn-success" ng-click='toGreen()'>字体变绿</button>
+                    <button class="btn btn-danger" ng-click='toRed()'>字体变红</button>
+                    <button class="btn btn-primary" ng-click='toBlue()'>字体变蓝</button>
+                    <button class="btn btn-default" ng-click='toBlack()'>字体变黑</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" ng-controller="divController">
+        <div class="col-md-6">
+            <div class="box" ng-class="change">Hello angular, angular-animate</div>
+        </div>
+        <div class="col-md-6">
+            <button class="btn btn-info" ng-click="toHeight()">变高</button>
+            <button class="btn btn-info" ng-click="toWidth()">变宽</button>
+            <button class="btn btn-info" ng-click="toReset()">重置</button>
+        </div>
+    </div>
+</body>
+<script src="lib/require.2.0.6.min.js" data-main="src/angular3.js"></script>
+</html>

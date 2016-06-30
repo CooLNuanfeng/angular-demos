@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div ng-controller="myController">
+    事件计数：{{count}}
+    <ul>
+        <li ng-controller="myController">
+            <div>同级事件{{count}}</div>
+            <button ng-click="$emit('myEvent')">$emit(向上传递事件)</button>
+            <button ng-click="$broadcast('myEvent')">$broadcast(向下传递事件)</button>
+            <ul ng-controller="myController">
+                <li>事件计数：{{count}}</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div ng-controller="timeController">{{date}}</div>
+</body>
+<script src="lib/angular.1.5.5.min.js"></script>
+<script src="src/angular1.js"></script>
+</html>

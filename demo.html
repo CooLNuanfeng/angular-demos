@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div ng-controller="textCtrl" ng-click="getHtml();">{{text}},Angular.js</div>
+    <angular title="angular"></angular>
+    <div ng-controller="textCtrl2">
+        <input type="text" name="name" value="" ng-model="textValue">
+        <p ng-click="getName();">{{textValue}}</p>
+        <angular title="angular"></angular>
+    </div>
+</body>
+<script src="lib/angular.min.js"></script>
+<script src="src/demo.js"></script>
+</html>

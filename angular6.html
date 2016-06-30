@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>指令与指令间的交互</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+</head>
+<body>
+    <my-parent my-add>add</my-parent>
+    <my-parent my-add my-modify>add modify</my-parent>
+    <my-parent my-add my-modify my-delete>add modify delete</my-parent>
+</body>
+<script src='lib/require.2.0.6.min.js' data-main='src/angular6.js'></script>
+</html>

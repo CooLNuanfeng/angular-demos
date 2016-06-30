@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="search" ng-controller="searchCtrl">
+        <input type="text" ng-model="searchTxt" ng-keyup="searchFn()">
+        <ul ng-if="data.length">
+            <li ng-repeat="item in data">姓名：<span ng-bind="item.name"></span>,年龄：<span ng-bind="item.age"></span></li>
+        </ul>
+    </div>
+</body>
+<script src="lib/require.2.0.6.min.js" data-main="src/angular8.js"></script>
+</html>

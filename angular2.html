@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="bookStore">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li><a href="#/hello">go hello</a></li>
+        <li><a href="#/list">go list</a></li>
+        <li><a href="#/other">go other(重定向到hello)</a></li>
+    </ul>
+    <div ng-view></div>
+</body>
+<script src="lib/require.2.0.6.min.js" data-main="src/angular2.js"></script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div ng-controller="myCtrl">
+    <my-custom info="personInfo" fn="show()" otherinfo='otherinfo'></my-custom>
+</div>
+<script type="text/ng-template" id="my-custom">
+    <p>Name: {{customInfo.name}},Address: {{customInfo.address}}</p>
+    Name: <input type="text" ng-model="customInfo.name"><br>
+    Address : <input type="text" ng-model="customInfo.address">
+    <button ng-click="showName()">show name</button>
+    <hr>
+    <p>Name: {{otherinfo.name}},Address: {{otherinfo.address}} </p>
+</script>
+</body>
+<script src="lib/require.2.0.6.min.js" data-main="src/angular7.js"></script>
+</html>
