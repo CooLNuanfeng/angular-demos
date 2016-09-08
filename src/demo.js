@@ -33,7 +33,7 @@ myModel.factory('ageCount',function(){
 myModel.provider('movie',function(){
      this.version = '';
      this.setVersion = function(v){
-         console.log(v)
+         //console.log(v)
          this.version = v
      }
      this.$get = function(){
@@ -54,16 +54,25 @@ myModel.controller('textCtrl2',['$scope','initCount','square','sqnum','ageCount'
     }
 }]);
 
-myModel.directive('angular',function(){
+myModel.directive('angular',['movie',function(movie){
     return {
+        'scope':{},
         'restrict' : 'E',
-        'template' : '<h1>Hello world</h1>',
+        'template' : '<h1>Hello world {{angularVersion}}</h1>',
         'replace' : true,
+        // 'compile' : function(){    //compile 与link 不能同时出现 同时出现只执行 compile 函数 该函数可以返回一个函数即为link函数
+        //     console.log('compile');
+        //     return function(scope,elem,attr){
+        //
+        //     }
+        // },
         'link' : function(scope,element,attr){
             console.log(scope,element,attr);
+            scope.angularVersion = movie.version;
             element.on('click',function(){
+                console.log('directive version:'+movie.version);
                 console.log('click');
             })
         }
     }
-});
+}]);
