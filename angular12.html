@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+</head>
+<body>
+<div>
+    <div class="container" ng-controller="MyController">
+        <div class="my-info">
+            我的名字是：<span ng-bind="name"></span>
+            <br/>
+            我的年龄是：<span ng-bind="age"></span>
+            <br />
+        </div>
+        <div class="my-directive" my-directive my-name="{{name}}" age="age"  change-my-age="changeAge(age)"></div>
+
+        <exprend tab-title='title'>
+            <div class="panel-body">{{text}}</div>
+        </exprend>
+    </div>
+</div>
+</body>
+<script src="lib/angular.1.5.5.min.js"></script>
+<script src="src/angular12.js"></script>
+</html>
