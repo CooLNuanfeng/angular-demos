@@ -1,0 +1,26 @@
+<!-- 视图嵌套 -->
+<!-- <div ng-controller="myCtrl">
+    <h1>{{text}}</h1>
+    <ul>
+        <li><a ui-sref=".inner1">加载 inner1</a></li>
+        <li><a ui-sref=".inner2">加载 inner2</a></li>
+    </ul>
+    <div ui-view></div>
+</div> -->
+
+<!-- 多视图 -->
+<!-- <div ui-view="aa"></div>
+<div ui-view="bb"></div> -->
+
+<!-- 结合 -->
+<div ng-controller="myCtrl">
+    <h1>{{text}}</h1>
+    <ul>
+        <li list-selected><a ui-sref=".inner1">加载 inner1</a></li>
+        <li list-selected><a ui-sref=".inner2">加载 inner2</a></li>
+        <li list-selected><a ui-sref=".page">加载 page 页 多视图 aa 和 bb</a></li>
+    </ul>
+    <div ui-view></div>
+    <div ui-view="aa"></div>
+    <div ui-view="bb"></div>
+</div>
