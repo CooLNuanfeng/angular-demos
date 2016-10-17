@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+    .active {background: #fcabab !important;}
+    </style>
+</head>
+<body ng-controller="myCtrl">
+    <div class="container-fluid">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>item1</th>
+                    <th>item2</th>
+                    <th>item3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="row in [1,2,3]">
+                    <td ng-class="{'active':selectedActive}" ng-repeat="item in tableData track by $index" my-td >{{item}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-danger btn-block" ng-click="reset();">重置表格</button>
+    </div>
+</body>
+<script src="lib/angular.1.5.5.min.js"></script>
+<script src="lib/jquery.2.2.2.min.js"></script>
+<script src="src/resetTable.js"></script>
+</html>

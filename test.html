@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+    .selected {background: #139029;}
+    </style>
 </head>
 <body ng-controller="listTask">
     <div class="input-group">
@@ -20,7 +23,23 @@
         <input type="text" ng-model="data.x">
       </div>
     </div>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>item1</th>
+                <th>item2</th>
+                <th>item3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in [1,2,3]">
+                <td ng-class="{'selected':selectClass}" ng-repeat="item in tableData" my-td >{{item}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-danger" ng-click="reset();">重置表格</button>
 </body>
 <script src="lib/angular.1.5.5.min.js"></script>
+<script src="lib/jquery.2.2.2.min.js"></script>
 <script src="src/test.js"></script>
 </html>

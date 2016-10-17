@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+</head>
+<body>
+    <div class="container" ng-controller="myCtrl">
+        <h1 ng-click="clickFn();">{{info}}</h1>
+        <p ng-click="count = parseInt(count) + 1">{{count}}</p>
+    </div>
+    <div class="container" ng-controller='tabCtrl'>
+        <div class="btn-group btn-group-sm">
+            <button class="btn btn-primary" ng-click="tab='left'" ng-class="{'active':tab=='left'}">left</button>
+            <button class="btn btn-primary" ng-click="tab='right'" ng-class="{'active':tab=='right'}">right</button>
+        </div>
+        <div ng-if="tab=='left'">left</div>
+        <div ng-if="tab=='right'">right</div>
+    </div>
+    <div class="container" ng-controller="parentCtrl">
+        <div class="row">
+            <div class="col-md-6" ng-controller="selfCtrl">
+                <h2>Self</h2>
+                <button class="btn btn-primary" ng-click="toChild()">broadcase to child</button>
+                <button class="btn btn-info" ng-click="toParent()">emmit to parent</button>
+                <p ng-controller="childCtrl"></p>
+            </div>
+            <div class="col-md-6" ng-controller="borthCtrl">borther</div>
+        </div>
+    </div>
+</body>
+<script src="lib/angular.1.5.5.min.js"></script>
+<script src="lib/jquery.2.2.2.min.js"></script>
+<script src="src/learnging.js"></script>
+</html>

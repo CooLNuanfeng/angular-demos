@@ -34,7 +34,7 @@ angular.module("myApp", []).controller("MyController", function ($scope) {
                 console.log(scope.setage);
             });
         }
-    }
+    };
     return obj;
 }).directive('exprend',function(){
     return {
@@ -49,7 +49,7 @@ angular.module("myApp", []).controller("MyController", function ($scope) {
             scope.showMe = false;
             scope.toggle = function(){
                 scope.showMe = !scope.showMe;
-            }
+            };
         }
-    }
+    };
 });

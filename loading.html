@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>$http 与 loading</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+        .loading{position: absolute; top: 0; left: 0; bottom: 0; right: 0; background: rgba(0,0,0,.8); text-align: center; line-height: 2; color: #fff; font-size: 200px; font-weight: bold}
+    </style>
+</head>
+<body>
+<div class="loading" loading>loading...</div>
+<div class="container" ng-controller="myCtrl">
+    <input class="form-control" type="text" ng-model="search"><br>
+    <button class="btn btn-primary" ng-click="get()">请求 1</button>
+</div>
+</body>
+<script src="lib/angular.1.5.5.min.js"></script>
+<script src="lib/jquery.2.2.2.min.js"></script>
+<script src="src/loading.js"></script>
+</html>

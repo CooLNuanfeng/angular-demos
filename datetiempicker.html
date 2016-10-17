@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/datetimepicker.css">
+</head>
+<body ng-controller='myCtrl'>
+    
+    <input type="text" class="form-control" data-ng-model="dateRangeStart">
+    <datetimepicker data-ng-model="dateRangeStart"
+                    data-datetimepicker-config="{ dropdownSelector: '#dropdownStart', renderOn: 'end-date-changed' ,startView:'day', minView:'day',modelType: 'YYYY-MM-DD',}"
+                    data-on-set-time="startDateOnSetTime()"
+                    data-before-render="startDateBeforeRender($dates)"></datetimepicker>
+
+    <input type="text" class="form-control" data-ng-model="dateRangeEnd">
+    <datetimepicker data-ng-model="dateRangeEnd"
+                    data-datetimepicker-config="{ dropdownSelector: '#dropdownEnd', renderOn: 'start-date-changed',startView:'day', minView:'day',modelType: 'YYYY-MM-DD', }"
+                    data-on-set-time="endDateOnSetTime()"
+                    data-before-render="endDateBeforeRender($view, $dates, $leftDate, $upDate, $rightDate)"></datetimepicker>
+
+</body>
+
+<script src="lib/angular.1.5.5.min.js"></script>
+<script src='lib/moment-with-locales.js'></script>
+<script src='lib/datetimepicker.js'></script>
+<script src='lib/datetimepicker.templates.js'></script>
+<script src='src/datetimepicker.js'></script>
+</html>
